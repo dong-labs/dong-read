@@ -19,20 +19,19 @@ class ReadSchemaManager(SchemaManager):
         )
 
     def init_schema(self) -> None:
-        self._create_articles_table()
+        self._create_items_table()
         self._create_indexes()
 
-    def _create_articles_table(self) -> None:
+    def _create_items_table(self) -> None:
         with ReadDatabase.get_cursor() as cur:
             cur.execute("""
-                CREATE TABLE IF NOT EXISTS articles (
+                CREATE TABLE IF NOT EXISTS items (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    title TEXT NOT NULL,
-                    author TEXT,
+                    content TEXT,
                     url TEXT,
-                    notes TEXT,
-                    status TEXT DEFAULT 'reading',
-                    rating INTEGER,
+                    source TEXT,
+                    type TEXT DEFAULT 'quote',
+                    metadata TEXT,
                     created_at TEXT DEFAULT CURRENT_TIMESTAMP,
                     updated_at TEXT DEFAULT CURRENT_TIMESTAMP
                 )
@@ -40,8 +39,8 @@ class ReadSchemaManager(SchemaManager):
 
     def _create_indexes(self) -> None:
         with ReadDatabase.get_cursor() as cur:
-            cur.execute("CREATE INDEX IF NOT EXISTS idx_articles_status ON articles(status)")
-            cur.execute("CREATE INDEX IF NOT EXISTS idx_articles_author ON articles(author)")
+            cur.execute("CREATE INDEX IF NOT EXISTS idx_items_type ON items(type)")
+            cur.execute("CREATE INDEX IF NOT EXISTS idx_items_created ON items(created_at)")
 
 
 # 兼容性函数
