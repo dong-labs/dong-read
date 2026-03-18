@@ -198,7 +198,7 @@ class Item:
 ### init - 初始化
 
 ```bash
-read init
+dr init
 ```
 
 **返回：**
@@ -218,9 +218,9 @@ read init
 ### add - 添加
 
 ```bash
-read add "内容"
-read add "内容" --url "https://..." --source "来源"
-read add --url "https://..."
+dr add "内容"
+dr add "内容" --url "https://..." --source "来源"
+dr add --url "https://..."
 ```
 
 **参数：**
@@ -236,8 +236,8 @@ read add --url "https://..."
 ### ls - 列出
 
 ```bash
-read ls
-read ls --limit 50 --type content --order asc
+dr ls
+dr ls --limit 50 --type content --order asc
 ```
 
 **参数：**
@@ -263,8 +263,8 @@ read ls --limit 50 --type content --order asc
 ### get - 获取
 
 ```bash
-read get 123
-read get 123 --field content
+dr get 123
+dr get 123 --field content
 ```
 
 **参数：**
@@ -278,8 +278,8 @@ read get 123 --field content
 ### delete - 删除
 
 ```bash
-read delete 123
-read delete 123 124 125 --force
+dr delete 123
+dr delete 123 124 125 --force
 ```
 
 **参数：**
@@ -302,8 +302,8 @@ read delete 123 124 125 --force
 ### search - 搜索
 
 ```bash
-read search "AI"
-read search "微信" --field source
+dr search "AI"
+dr search "微信" --field source
 ```
 
 **参数：**

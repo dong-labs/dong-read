@@ -32,7 +32,7 @@ Agent 越来越多（Claude Code、Cursor、warp），但它们需要**可操作
 如果数据在本地的 SQLite 里，一行命令就拿到了：
 
 ```bash
-read ls --limit 5
+dr ls --limit 5
 # → 返回 JSON
 # → Agent 解析、分析、推荐
 ```
@@ -59,22 +59,22 @@ read ls --limit 5
 
 ```bash
 # 安装
-pip install read-cli
+pip install dong-read
 
 # 初始化
-read init
+dr init
 
 # 添加摘录
-read add "我们一直在设计 AI 原生的工具"
+dr add "我们一直在设计 AI 原生的工具"
 
 # 收藏文章
-read add --url "https://example.com"
+dr add --url "https://example.com"
 
 # 列出所有
-read ls
+dr ls
 
 # 搜索
-read search "AI"
+dr search "AI"
 ```
 
 ### Python SDK

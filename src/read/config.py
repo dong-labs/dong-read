@@ -1,6 +1,6 @@
 """配置管理模块
 
-继承 dong.config.Config，管理 read-cli 的用户配置。
+继承 dong.config.Config，管理 dong-read 的用户配置。
 """
 
 from dong.config import Config

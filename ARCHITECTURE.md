@@ -96,12 +96,12 @@ ReadDongDong/
 │       │
 │       └── commands/              # 命令实现（调用 core）
 │           ├── __init__.py
-│           ├── init.py            # read init
-│           ├── add.py             # read add
-│           ├── ls.py              # read ls
-│           ├── get.py             # read get
-│           ├── delete.py          # read delete
-│           └── search.py          # read search
+│           ├── init.py            # dr init
+│           ├── add.py             # dr add
+│           ├── ls.py              # dr ls
+│           ├── get.py             # dr get
+│           ├── delete.py          # dr delete
+│           └── search.py          # dr search
 │
 ├── tests/                         # 测试
 │   ├── __init__.py
@@ -312,7 +312,7 @@ def cmd_add(
 ### 4.1 init - 初始化
 
 ```bash
-read init
+dr init
 ```
 
 ```json
@@ -329,10 +329,10 @@ read init
 ### 4.2 add - 添加
 
 ```bash
-read add "一句话说得真好"
-read add "一句话" --url "https://example.com"
-read add --url "https://mp.weixin.qq.com/s/xxx"
-read add "一句话" --url "..." --source "CLAUDE.md"
+dr add "一句话说得真好"
+dr add "一句话" --url "https://example.com"
+dr add --url "https://mp.weixin.qq.com/s/xxx"
+dr add "一句话" --url "..." --source "CLAUDE.md"
 ```
 
 **验证规则**：
@@ -342,11 +342,11 @@ read add "一句话" --url "..." --source "CLAUDE.md"
 ### 4.3 ls - 列出
 
 ```bash
-read ls                    # 默认 20 条
-read ls --limit 50
-read ls --type content     # 只摘录
-read ls --type link        # 只链接
-read ls --order asc        # 正序
+dr ls                    # 默认 20 条
+dr ls --limit 50
+dr ls --type content     # 只摘录
+dr ls --type link        # 只链接
+dr ls --order asc        # 正序
 ```
 
 ```json
@@ -362,23 +362,23 @@ read ls --order asc        # 正序
 ### 4.4 get - 获取
 
 ```bash
-read get 123
-read get 123 --field content
+dr get 123
+dr get 123 --field content
 ```
 
 ### 4.5 delete - 删除
 
 ```bash
-read delete 123
-read delete 123 124 125
-read delete 123 --force
+dr delete 123
+dr delete 123 124 125
+dr delete 123 --force
 ```
 
 ### 4.6 search - 搜索
 
 ```bash
-read search "AI"
-read search "微信" --field source
+dr search "AI"
+dr search "微信" --field source
 ```
 
 ---
@@ -389,7 +389,7 @@ read search "微信" --field source
 
 ```toml
 [project]
-name = "read-cli"
+name = "dong-read"
 version = "0.1.0"
 description = "读咚咚 - 个人知识数据层的命令行接口"
 readme = "readme.md"

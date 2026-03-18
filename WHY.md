@@ -43,7 +43,7 @@
 如果数据在本地的 SQLite 里，一行命令就拿到了：
 
 ```bash
-read ls --limit 5
+dr ls --limit 5
 # → 返回 JSON
 # → Agent 解析、分析、推荐
 ```
@@ -75,7 +75,7 @@ read ls --limit 5
 ┌─────────────────────────────────────────┐
 │  你看到一句好话 / 一篇好文章              │
 ├─────────────────────────────────────────┤
-│  read add "这句话说得真好"                │
+│  dr add "这句话说得真好"                │
 │  或浏览器插件一键收藏                     │
 ├─────────────────────────────────────────┤
 │  存入 ~/.read/read.db (SQLite)            │
@@ -142,21 +142,21 @@ data = json.loads(result.stdout)
 
 ```bash
 # 正在终端工作，突然看到一句好话
-read add "我们一直在设计 AI 原生的工具"
+dr add "我们一直在设计 AI 原生的工具"
 ```
 
 ### 场景 2：收藏一篇好文章
 
 ```bash
 # 看到一篇好文章，先存下来稍后读
-read add --url "https://mp.weixin.qq.com/s/xxx"
+dr add --url "https://mp.weixin.qq.com/s/xxx"
 ```
 
 ### 场景 3：摘录 + 来源
 
 ```bash
 # 这句话来自某篇文章
-read add "Agent First, Human Second" \
+dr add "Agent First, Human Second" \
     --url "https://example.com" \
     --source "CLAUDE.md"
 ```
@@ -165,7 +165,7 @@ read add "Agent First, Human Second" \
 
 ```bash
 # 早上，让 Agent 推荐一条昨天的摘录
-read ls --limit 1 --type content
+dr ls --limit 1 --type content
 # → Agent 拿到结果，生成早安问候
 ```
 
@@ -220,13 +220,13 @@ JSON 输出、简单的命令、清晰的接口。
 
 ```bash
 # 安装
-pip install read-cli
+pip install dong-read
 
 # 初始化
-read init
+dr init
 
 # 存下你看到的第一句话
-read add "开始，就是最好的时机"
+dr add "开始，就是最好的时机"
 ```
 
 ---

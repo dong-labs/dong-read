@@ -18,8 +18,8 @@ Read - 本地、私有的个人知识数据层，为 Agent 时代设计
 
 ## 使用场景
 
-- 看到一句好话 → `read add "这句话说得真好"`
-- 收藏一篇好文章 → `read add --url "https://example.com"`
+- 看到一句好话 → `dr add "这句话说得真好"`
+- 收藏一篇好文章 → `dr add --url "https://example.com"`
 - 让 Agent 推荐历史摘录 → `client.search("AI")`
 
 ## 与其他工具的区别

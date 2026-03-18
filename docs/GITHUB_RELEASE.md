@@ -18,26 +18,26 @@
 ## 安装
 
 ```bash
-pip install read-cli
+pip install dong-read
 
 # 初始化
-read init
+dr init
 ```
 
 ## 快速开始
 
 ```bash
 # 添加摘录
-read add "开始，就是最好的时机"
+dr add "开始，就是最好的时机"
 
 # 收藏文章
-read add --url "https://mp.weixin.qq.com/s/xxx"
+dr add --url "https://mp.weixin.qq.com/s/xxx"
 
 # 列出所有
-read ls
+dr ls
 
 # 搜索
-read search "AI"
+dr search "AI"
 ```
 
 ## Python SDK

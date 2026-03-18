@@ -30,7 +30,7 @@
 ### 方式一：从 PyPI 安装（推荐）
 
 ```bash
-pip install read-cli
+pip install dong-read
 ```
 
 ### 方式二：从源码安装
@@ -44,7 +44,7 @@ pip install -e .
 ### 初始化
 
 ```bash
-read init
+dr init
 ```
 
 ---
@@ -68,19 +68,19 @@ cp agent/MEMORY.md.template ~/.openclaw/agents/read/MEMORY.md
 
 ```bash
 # 添加摘录
-read add "开始，就是最好的时机"
+dr add "开始，就是最好的时机"
 
 # 收藏文章
-read add --url "https://mp.weixin.qq.com/s/xxx"
+dr add --url "https://mp.weixin.qq.com/s/xxx"
 
 # 列出所有
-read ls
+dr ls
 
 # 搜索
-read search "AI"
+dr search "AI"
 
 # 删除
-read delete 123 --force
+dr delete 123 --force
 ```
 
 ---
@@ -126,13 +126,13 @@ results = client.search("AI")
 
 | 命令 | 说明 |
 |------|------|
-| `read init` | 初始化数据库 |
-| `read add "内容"` | 添加摘录 |
-| `read add --url "..."` | 收藏链接 |
-| `read ls` | 列出所有 |
-| `read search "关键词"` | 搜索 |
-| `read get 123` | 获取单条 |
-| `read delete 123` | 删除 |
+| `dr init` | 初始化数据库 |
+| `dr add "内容"` | 添加摘录 |
+| `dr add --url "..."` | 收藏链接 |
+| `dr ls` | 列出所有 |
+| `dr search "关键词"` | 搜索 |
+| `dr get 123` | 获取单条 |
+| `dr delete 123` | 删除 |
 
 ---
 
@@ -143,7 +143,7 @@ results = client.search("AI")
 │                    客户端层                              │
 ├──────────────┬──────────────┬──────────────┬────────────┤
 │ CLI          │ Browser      │ Python SDK   │ MCP Server  │
-│ (read add)    │ Extension    │ (import)     │ (Agent)     │
+│ (dr add)    │ Extension    │ (import)     │ (Agent)     │
 └──────────────┴──────────────┴──────────────┴────────────┘
                              │
                     ┌────────▼────────┐

@@ -4,18 +4,18 @@
 
 ### 安装
 ```bash
-pip install read-cli
+pip install dong-read
 ```
 
 ### 基础命令
 ```bash
-read init              # 初始化
-read add "内容"        # 添加摘录
-read add --url "链接"  # 收藏链接
-read ls                # 列出所有
-read search "关键词"   # 搜索
-read get 1             # 获取单条
-read delete 1 --force  # 删除
+dr init              # 初始化
+dr add "内容"        # 添加摘录
+dr add --url "链接"  # 收藏链接
+dr ls                # 列出所有
+dr search "关键词"   # 搜索
+dr get 1             # 获取单条
+dr delete 1 --force  # 删除
 ```
 
 ---
@@ -75,12 +75,12 @@ client.search_query("Python").limit(5).execute()
 
 | 用户说 | 命令 |
 |--------|------|
-| "收藏这句话" | `read add "..."` |
-| "保存这篇文章" | `read add --url "..."` |
-| "我存了什么" | `read ls --limit 10` |
-| "找关于 AI 的" | `read search "AI"` |
-| "有多少条了" | `read ls` 查看 total |
-| "删除这条" | `read delete <id> --force` |
+| "收藏这句话" | `dr add "..."` |
+| "保存这篇文章" | `dr add --url "..."` |
+| "我存了什么" | `dr ls --limit 10` |
+| "找关于 AI 的" | `dr search "AI"` |
+| "有多少条了" | `dr ls` 查看 total |
+| "删除这条" | `dr delete <id> --force` |
 
 ---
 

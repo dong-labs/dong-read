@@ -1,6 +1,6 @@
 """数据库连接管理模块
 
-继承 dong.db.Database，提供 read-cli 专用数据库访问。
+继承 dong.db.Database，提供 dong-read 专用数据库访问。
 """
 
 import sqlite3

@@ -18,7 +18,7 @@ https://github.com/gudong/read
 
 我的一天：
 
-终端看到好话 → `read add "这句话说得真好"`
+终端看到好话 → `dr add "这句话说得真好"`
 浏览器看到好文 → 浏览器插件一键收藏（v0.4）
 Agent 需要推荐 → `client.search("AI")`
 

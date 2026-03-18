@@ -6,40 +6,40 @@
 
 ```bash
 # 安装
-pip install read-cli
+pip install dong-read
 
 # 初始化
-read init
+dr init
 ```
 
 ## CLI 命令
 
 ### 添加摘录
 ```bash
-read add "开始，就是最好的时机"              # 纯内容
-read add --url "https://example.com"         # 纯链接
-read add "内容" --url "链接" --source "来源" # 完整
+dr add "开始，就是最好的时机"              # 纯内容
+dr add --url "https://example.com"         # 纯链接
+dr add "内容" --url "链接" --source "来源" # 完整
 ```
 
 ### 查询摘录
 ```bash
-read ls                    # 列出所有（默认20条）
-read ls --limit 50         # 指定数量
-read get 1                 # 获取单条
-read get 1 --field content # 只获取内容字段
+dr ls                    # 列出所有（默认20条）
+dr ls --limit 50         # 指定数量
+dr get 1                 # 获取单条
+dr get 1 --field content # 只获取内容字段
 ```
 
 ### 搜索
 ```bash
-read search "关键词"              # 全字段搜索
-read search "关键词" --field content   # 搜索内容
-read search "关键词" --field source    # 搜索来源
+dr search "关键词"              # 全字段搜索
+dr search "关键词" --field content   # 搜索内容
+dr search "关键词" --field source    # 搜索来源
 ```
 
 ### 删除
 ```bash
-read delete 1 --force     # 删除单条
-read delete 1 2 3 --force # 批量删除
+dr delete 1 --force     # 删除单条
+dr delete 1 2 3 --force # 批量删除
 ```
 
 ## Python SDK（推荐）
@@ -103,12 +103,12 @@ total = client.count()
 
 | 用户说 | 命令 |
 |--------|------|
-| "收藏这句话" | `read add "..."` |
-| "保存这篇文章" | `read add --url "..."` |
-| "我存了什么" | `read ls --limit 10` |
-| "找关于 AI 的" | `read search "AI"` |
-| "看看我收藏的链接" | `read ls --type link` |
-| "删除这条" | `read delete <id> --force` |
+| "收藏这句话" | `dr add "..."` |
+| "保存这篇文章" | `dr add --url "..."` |
+| "我存了什么" | `dr ls --limit 10` |
+| "找关于 AI 的" | `dr search "AI"` |
+| "看看我收藏的链接" | `dr ls --type link` |
+| "删除这条" | `dr delete <id> --force` |
 
 ## 数据库位置
 

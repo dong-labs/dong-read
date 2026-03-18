@@ -1,6 +1,6 @@
 """数据库 Schema 定义和版本管理
 
-继承 dong.db.SchemaManager，管理 read-cli 的数据库 schema。
+继承 dong.db.SchemaManager，管理 dong-read 的数据库 schema。
 """
 
 from dong.db import SchemaManager

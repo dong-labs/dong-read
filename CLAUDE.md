@@ -90,40 +90,40 @@ read
 
 ```bash
 # 初始化
-read init
+dr init
 
 # 场景1: 只存摘录
-read add "我们一直在设计 AI 原生的工具"
+dr add "我们一直在设计 AI 原生的工具"
 
 # 场景2: 摘录 + 链接
-read add "Agent First, Human Second" --url "https://example.com"
+dr add "Agent First, Human Second" --url "https://example.com"
 
 # 场景3: 只存链接
-read add --url "https://mp.weixin.qq.com/s/xxx"
+dr add --url "https://mp.weixin.qq.com/s/xxx"
 
 # 场景4: 带来源备注
-read add "一句话" --url "https://example.com" --source "CLAUDE.md"
+dr add "一句话" --url "https://example.com" --source "CLAUDE.md"
 
 # 列出所有
-read ls
+dr ls
 
 # 指定数量
-read ls --limit 50
+dr ls --limit 50
 
 # 只列出摘录
-read ls --type content
+dr ls --type content
 
 # 只列出链接
-read ls --type link
+dr ls --type link
 
 # 获取单条
-read get 123
+dr get 123
 
 # 删除
-read delete 123
+dr delete 123
 
 # 搜索
-read search "AI"
+dr search "AI"
 ```
 
 ---
@@ -186,13 +186,13 @@ CREATE INDEX idx_items_url ON items(url);
 pip install -e .
 
 # 初始化
-read init
+dr init
 
 # 添加摘录
-read add "我们一直在设计 AI 原生的工具"
+dr add "我们一直在设计 AI 原生的工具"
 
 # 列出所有
-read ls
+dr ls
 ```
 
 ---
@@ -252,7 +252,7 @@ ReadDongDong/
 │                    客户端层                              │
 ├──────────────┬──────────────┬──────────────┬────────────┤
 │ CLI          │ Browser      │ Python SDK   │ MCP Server  │
-│ (read add)    │ Extension    │ (import)     │ (Agent)     │
+│ (dr add)    │ Extension    │ (import)     │ (Agent)     │
 └──────┬───────┴──────┬───────┴──────┬───────┴────┬───────┘
        │              │              │              │
        └──────────────┴──────────────┴──────────────┘
