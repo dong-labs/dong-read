@@ -1,6 +1,6 @@
 """init 命令 - 初始化数据库"""
 
-from read.db.schema import init_db
+from read.db import init_database
 
 
 def cmd_init() -> dict:
@@ -9,4 +9,5 @@ def cmd_init() -> dict:
     Returns:
         初始化结果
     """
-    return init_db()
+    init_database()
+    return {"message": "数据库初始化成功"}
