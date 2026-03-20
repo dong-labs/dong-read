@@ -20,7 +20,7 @@
 
 - **数据层优先** - Core Library 是核心，CLI/插件/SDK 都是客户端
 - **本地私有** - 数据存放在 `~/.read/read.db`，不上云、不同步、不追踪
-- **Agent 友好** - JSON 输出 + Python SDK + MCP Server（v0.2）
+- **Agent 友好** - JSON 输出 + Python SDK + MCP Server
 - **极简核心** - 只做收集，不做整理
 
 ---
@@ -163,10 +163,10 @@ results = client.search("AI")
 
 | 版本 | 核心资产 | 客户端 | 状态 |
 |------|----------|--------|------|
-| v0.1 | Core Library v0.1 | CLI | ✅ 完成 |
-| v0.2 | Core Library v0.1 | **MCP Server** | 🚧 开发中 |
-| v0.3 | Core Library v0.1 | Python SDK 增强 | 📋 计划中 |
-| v0.4 | Core Library v0.1 | Browser Extension | 📋 计划中 |
+| v0.5 | Core Library v0.1 | **CLI + Python SDK** | ✅ 完成 |
+| v0.6 | Core Library v0.1 | **MCP Server** | 🚧 开发中 |
+| v0.7 | Core Library v0.1 | Python SDK 增强 | 📋 计划中 |
+| v0.8 | Core Library v0.1 | Browser Extension | 📋 计划中 |
 
 ---
 

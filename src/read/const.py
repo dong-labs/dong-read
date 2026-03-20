@@ -2,7 +2,7 @@
 
 import datetime
 
-VERSION = "0.1.0"
+VERSION = "0.5.0"
 DB_NAME = "read.db"
 # 数据目录 - 统一放在 ~/.dong/ 下
 from pathlib import Path
