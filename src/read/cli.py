@@ -154,5 +154,26 @@ def tags():
     return result
 
 
+@app.command()
+def export(
+    output_file: str = typer.Option("read.json", "-o", "--output", help="输出文件"),
+    format: str = typer.Option("json", "-f", "--format", help="格式: json/md"),
+):
+    """导出阅读数据"""
+    from read.commands.export import export as do_export
+    do_export(output_file, format)
+
+
+@app.command(name="import")
+def import_data(
+    file: str = typer.Option(..., "-f", "--file", help="导入文件"),
+    merge: bool = typer.Option(False, "--merge", help="合并模式"),
+    dry_run: bool = typer.Option(False, "--dry-run", help="预览模式"),
+):
+    """导入阅读数据"""
+    from read.commands.data_import import import_data as do_import
+    do_import(file, merge, dry_run)
+
+
 if __name__ == "__main__":
     app()
