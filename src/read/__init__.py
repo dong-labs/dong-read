@@ -4,7 +4,7 @@
 本地、私有、可编程的个人知识基础设施。
 """
 
-__version__ = "0.7.0"
+__version__ = "0.7.1"
 
 from read.core.client import Client
 

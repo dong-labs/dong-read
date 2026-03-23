@@ -1,6 +1,6 @@
 [project]
 name = "dong-read"
-version = "0.7.0"
+version = "0.7.1"
 description = "读咚咚 (Read DongDong) - 个人知识数据层的命令行接口"
 readme = "readme.md"
 requires-python = ">=3.11"
@@ -20,7 +20,7 @@ classifiers = [
 
 dependencies = [
     "typer>=0.12.0",
-    "dong-core>=0.4.0",
+    "dong-core>=0.7.0",
 ]
 
 [project.optional-dependencies]
