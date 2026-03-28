@@ -15,6 +15,8 @@ from read.const import DEFAULT_LIMIT, DEFAULT_TYPE, get_timestamp
 
 def add_item(
     content: Optional[str] = None,
+    title: Optional[str] = None,
+    note: Optional[str] = None,
     url: Optional[str] = None,
     source: Optional[str] = None,
     item_type: str = DEFAULT_TYPE,
@@ -25,6 +27,8 @@ def add_item(
 
     Args:
         content: 摘录内容
+        title: 文章标题
+        note: 个人备注/说明
         url: 链接
         source: 来源备注
         item_type: 数据类型
@@ -48,10 +52,10 @@ def add_item(
     with get_cursor() as cursor:
         cursor.execute(
             """
-            INSERT INTO items (content, url, source, type, metadata, tags, created_at, updated_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            INSERT INTO items (content, title, note, url, source, type, metadata, tags, created_at, updated_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
-            (content, url, source, item_type, metadata, tags, now, now),
+            (content, title, note, url, source, item_type, metadata, tags, now, now),
         )
         return cursor.lastrowid
 

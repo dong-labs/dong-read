@@ -53,6 +53,8 @@ class Client:
     def add(
         self,
         content: Optional[str] = None,
+        title: Optional[str] = None,
+        note: Optional[str] = None,
         url: Optional[str] = None,
         source: Optional[str] = None,
         item_type: str = "quote",
@@ -63,6 +65,8 @@ class Client:
 
         Args:
             content: 摘录内容
+            title: 文章标题
+            note: 个人备注/说明
             url: 链接
             source: 来源备注
             item_type: 数据类型（quote/article/code）
@@ -77,6 +81,8 @@ class Client:
         """
         item_id = db_add_item(
             content=content,
+            title=title,
+            note=note,
             url=url,
             source=source,
             item_type=item_type,

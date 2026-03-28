@@ -7,6 +7,8 @@ from read.core.client import Client
 
 def cmd_add(
     content: Optional[str],
+    title: Optional[str],
+    note: Optional[str],
     url: Optional[str],
     source: Optional[str],
     item_type: str = "quote",
@@ -16,6 +18,8 @@ def cmd_add(
 
     Args:
         content: 摘录内容
+        title: 文章标题
+        note: 个人备注/说明
         url: 链接
         source: 来源备注
         item_type: 数据类型
@@ -27,6 +31,8 @@ def cmd_add(
     client = Client()
     item = client.add(
         content=content,
+        title=title,
+        note=note,
         url=url,
         source=source,
         item_type=item_type,

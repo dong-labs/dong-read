@@ -49,15 +49,27 @@ def handle_error(e: Exception) -> None:
     raise typer.Exit(code=1)
 
 
+def _version_callback_impl(value: bool) -> None:
+    """版本号回调实现"""
+    if value:
+        typer.echo(f"dong-read {__version__}")
+        raise typer.Exit()
+
+
 @app.callback()
 def version_callback(
     ctx: typer.Context,
-    version: bool = typer.Option(False, "--version", "-v", help="显示版本号"),
+    version: bool = typer.Option(
+        False,
+        "--version",
+        "-v",
+        help="显示版本号",
+        callback=_version_callback_impl,
+        is_eager=True,
+    ),
 ) -> None:
     """版本号回调"""
-    if version:
-        typer.echo(f"dong-read {__version__}")
-        raise typer.Exit()
+    pass
 
 
 @app.command()
@@ -73,6 +85,8 @@ def init():
 @json_output
 def add(
     content: str = typer.Argument(None, help="摘录内容"),
+    title: str = typer.Option(None, "--title", help="文章标题"),
+    note: str = typer.Option(None, "--note", help="个人备注/说明"),
     url: str = typer.Option(None, "--url", "-u", help="链接"),
     source: str = typer.Option(None, "--source", "-s", help="来源备注"),
     type: str = typer.Option("quote", "--type", "-t", help="数据类型（quote/article/code）"),
@@ -80,7 +94,7 @@ def add(
 ):
     """添加摘录或链接"""
     from read.commands.add import cmd_add
-    result = cmd_add(content=content, url=url, source=source, item_type=type, tags=tags)
+    result = cmd_add(content=content, title=title, note=note, url=url, source=source, item_type=type, tags=tags)
     return result
 
 

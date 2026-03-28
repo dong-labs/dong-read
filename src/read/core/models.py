@@ -15,7 +15,9 @@ class Item:
 
     Attributes:
         id: 主键 ID
+        title: 文章标题
         content: 摘录内容
+        note: 个人备注/说明
         url: 链接
         source: 来源备注
         type: 数据类型（quote/article/code）
@@ -26,7 +28,9 @@ class Item:
     """
 
     id: int
+    title: Optional[str] = None
     content: Optional[str] = None
+    note: Optional[str] = None
     url: Optional[str] = None
     source: Optional[str] = None
     type: str = "quote"
@@ -65,7 +69,9 @@ class Item:
         """转换为字典"""
         return {
             "id": self.id,
+            "title": self.title,
             "content": self.content,
+            "note": self.note,
             "url": self.url,
             "source": self.source,
             "type": self.type,
@@ -80,7 +86,9 @@ class Item:
         """从字典创建"""
         return cls(
             id=data["id"],
+            title=data.get("title"),
             content=data.get("content"),
+            note=data.get("note"),
             url=data.get("url"),
             source=data.get("source"),
             type=data.get("type", "quote"),

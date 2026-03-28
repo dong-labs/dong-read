@@ -6,7 +6,7 @@
 from dong.db import SchemaManager
 from .connection import ReadDatabase
 
-SCHEMA_VERSION = "1.1.0"
+SCHEMA_VERSION = "1.2.0"
 
 
 class ReadSchemaManager(SchemaManager):
@@ -21,13 +21,30 @@ class ReadSchemaManager(SchemaManager):
     def init_schema(self) -> None:
         self._create_items_table()
         self._create_indexes()
+    
+    def migrate(self, from_version: str, to_version: str) -> None:
+        """数据库迁移：添加 title 和 note 字段"""
+        with ReadDatabase.get_cursor() as cur:
+            # 1.1.0 -> 1.2.0: 添加 title 和 note 字段
+            if from_version == "1.1.0" and to_version == "1.2.0":
+                # 检查字段是否已存在
+                cur.execute("PRAGMA table_info(items)")
+                columns = [row[1] for row in cur.fetchall()]
+                
+                if 'title' not in columns:
+                    cur.execute("ALTER TABLE items ADD COLUMN title TEXT")
+                
+                if 'note' not in columns:
+                    cur.execute("ALTER TABLE items ADD COLUMN note TEXT")
 
     def _create_items_table(self) -> None:
         with ReadDatabase.get_cursor() as cur:
             cur.execute("""
                 CREATE TABLE IF NOT EXISTS items (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    title TEXT,
                     content TEXT,
+                    note TEXT,
                     url TEXT,
                     source TEXT,
                     type TEXT DEFAULT 'quote',
